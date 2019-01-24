@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="XfermodeView">
+        <attr name="mode" format="enum">
+            <enum name="Normal" value="0" />
+            <enum name="Clear" value="1" />
+            <enum name="Src" value="2" />
+            <enum name="Dst" value="3" />
+            <enum name="SrcOver" value="4" />
+            <enum name="DstOver" value="5" />
+            <enum name="SrcIn" value="6" />
+            <enum name="DstIn" value="7" />
+            <enum name="SrcOut" value="8" />
+            <enum name="DstOut" value="9" />
+            <enum name="SrcTop" value="10" />
+            <enum name="DstTop" value="11" />
+            <enum name="Xor" value="12" />
+            <enum name="Darken" value="13" />
+            <enum name="Lighten" value="14" />
+            <enum name="Multiply" value="15" />
+            <enum name="Screen" value="16" />
+        </attr>
+    </declare-styleable>
+
+    <declare-styleable name="ComposeShaderView">
+        <attr name="imgSrc" format="reference" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.ShaderActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/wallpaper">
+
+            <com.xing.progressandroid.customview.LinearShaderTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:text=">> 向右滑动解锁"
+                android:textColor="#ffcccccc"
+                android:textSize="20sp" />
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+
+            <com.xing.progressandroid.customview.ComposeShaderView
+                android:id="@+id/cslv_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:imgSrc="@drawable/logo" />
+
+            <Button
+                android:id="@+id/btn_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginLeft="20dp"
+                android:background="@color/colorPrimary"
+                android:text="Start"
+                android:textAllCaps="false"
+                android:textColor="#fff" />
+        </LinearLayout>
+
+
+        <com.xing.progressandroid.customview.BitmapShaderView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+        <com.xing.progressandroid.customview.BitmapShaderShapeView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+        <com.xing.progressandroid.customview.BitmapShaderShapeImageView
+            android:layout_width="300dp"
+            android:layout_height="100dp"
+
+            android:layout_marginTop="10dp" />
+
+        <com.xing.progressandroid.customview.LinearGradientView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp" />
+
+        <com.xing.progressandroid.customview.RadialGradientView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp" />
+
+        <com.xing.progressandroid.customview.SweepGradientView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp" />
+
+    </LinearLayout>
+</ScrollView>

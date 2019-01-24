@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.XfermodeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.xing.progressandroid.customview.XfermodeCircleImageView
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/meizi" />
+
+            <com.xing.progressandroid.customview.XfermodeCircleImageView2
+                android:layout_width="0dp"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:src="@drawable/meizi" />
+
+        </LinearLayout>
+
+        <com.xing.progressandroid.customview.XfermodeHeartShapeImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="#eee"
+            android:src="@drawable/meizi" />
+
+        <Button
+            android:id="@+id/btn_xfermode_list"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Xfermode List"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+
+        <com.xing.progressandroid.customview.HighlightProgressImageView
+            android:id="@+id/hpiv_image"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/meizi" />
+
+        <Button
+            android:id="@+id/btn_xfermode_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Start Animator"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+    </LinearLayout>
+</ScrollView>

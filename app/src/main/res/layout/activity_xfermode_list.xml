@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Clear" />
+
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Src" />
+
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Dst" />
+
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="SrcOver" />
+
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="DstOver" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="SrcIn" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="DstIn" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="SrcOut" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="DstOut" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="SrcTop" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="DstTop" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Xor" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Darken" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Lighten" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Multiply" />
+
+        <com.xing.progressandroid.customview.XfermodeView
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:mode="Screen" />
+    </LinearLayout>
+
+</ScrollView>
