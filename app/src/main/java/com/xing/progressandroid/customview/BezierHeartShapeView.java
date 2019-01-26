@@ -40,15 +40,17 @@ public class BezierHeartShapeView extends View {
         mViewHeight = h;
 
         // 二阶贝塞尔曲线
-        path.moveTo(mViewWidth / 2f, mViewHeight / 3f);
-        path.cubicTo(mViewWidth / 7f, mViewHeight / 9f,
-                mViewWidth / 13f, (mViewHeight * 2) / 5f,
-                mViewWidth / 2f, (mViewHeight * 4) / 5f);
+        // 二阶贝塞尔曲线
+        path.moveTo(mViewWidth / 2f, mViewHeight / 4f);
+        path.cubicTo(mViewWidth / 10f, mViewHeight / 12f,
+                mViewWidth / 9f, (mViewHeight * 3) / 5f,
+                mViewWidth / 2f, (mViewHeight * 5) / 6f);
         path.cubicTo(
-                mViewWidth * 12 / 13f, (mViewHeight * 2) / 5f,
-                mViewWidth * 6 / 7f, mViewHeight / 9f,
-                mViewWidth / 2f, mViewHeight / 3f);
-        path.close();
+                mViewWidth * 8 / 9f, (mViewHeight * 3) / 5f,
+                mViewWidth * 9 / 10f, mViewHeight / 12f,
+                mViewWidth / 2f, mViewHeight / 4f);
+
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
     }
 
 

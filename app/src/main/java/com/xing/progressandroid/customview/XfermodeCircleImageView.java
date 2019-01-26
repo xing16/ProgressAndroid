@@ -62,7 +62,7 @@ public class XfermodeCircleImageView extends android.support.v7.widget.AppCompat
         paint.setStrokeWidth(10);
         paint.setStyle(Paint.Style.STROKE);
         paint.setColor(getResources().getColor(R.color.orange));
-        canvas.drawCircle(mViewWidth >> 1, mViewHeight >> 1, radius , paint);
+        canvas.drawCircle(mViewWidth >> 1, mViewHeight >> 1, radius - paint.getStrokeWidth() / 2, paint);
         paint.setXfermode(null);
         canvas.restoreToCount(saveLayer);
     }

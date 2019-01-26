@@ -21,8 +21,11 @@ public class XfermodeActivity extends AppCompatActivity {
 
     public void click(View view) {
         switch (view.getId()) {
-            case R.id.btn_xfermode_list:
-                IntentUtil.startActivity(this, XfermodeListActivity.class);
+            case R.id.btn_xfermode_bitmap_list:
+                IntentUtil.startActivity(this, XfermodeBitmapSampleActivity.class);
+                break;
+            case R.id.btn_xfermode_color_list:
+                IntentUtil.startActivity(this, XfermodeColorSampleActivity.class);
                 break;
             case R.id.btn_xfermode_loading:
                 progressImageView.start();

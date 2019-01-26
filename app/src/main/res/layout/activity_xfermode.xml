@@ -13,9 +13,36 @@
         android:orientation="vertical"
         android:padding="10dp">
 
+        <Button
+            android:id="@+id/btn_xfermode_bitmap_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_btn_bg"
+            android:onClick="click"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Xfermode Bitmap sample"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_xfermode_color_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/selector_btn_bg"
+            android:onClick="click"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Xfermode Color sample"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
             <com.xing.progressandroid.customview.XfermodeCircleImageView
@@ -38,20 +65,6 @@
             android:background="#eee"
             android:src="@drawable/meizi" />
 
-        <Button
-            android:id="@+id/btn_xfermode_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
-            android:onClick="click"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
-            android:text="Xfermode List"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white" />
-
-
         <com.xing.progressandroid.customview.HighlightProgressImageView
             android:id="@+id/hpiv_image"
             android:layout_width="300dp"
@@ -65,11 +78,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@color/colorPrimary"
+            android:background="@drawable/selector_btn_bg"
             android:onClick="click"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:text="Start Animator"
+            android:text="Start Loading"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
     </LinearLayout>
