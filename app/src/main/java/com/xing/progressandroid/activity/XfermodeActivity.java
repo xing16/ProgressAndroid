@@ -1,14 +1,14 @@
 package com.xing.progressandroid.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.xing.progressandroid.R;
+import com.xing.progressandroid.base.BaseActivity;
 import com.xing.progressandroid.customview.HighlightProgressImageView;
 import com.xing.progressandroid.utils.IntentUtil;
 
-public class XfermodeActivity extends AppCompatActivity {
+public class XfermodeActivity extends BaseActivity {
 
     private HighlightProgressImageView progressImageView;
 

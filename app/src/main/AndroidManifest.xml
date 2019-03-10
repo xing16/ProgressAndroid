@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xing.progressandroid">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -12,6 +15,7 @@
         <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
@@ -20,7 +24,10 @@
         <activity android:name=".activity.ShaderActivity" />
         <activity android:name=".activity.XfermodeColorSampleActivity" />
         <activity android:name=".activity.BezierActivity" />
-        <activity android:name=".activity.XfermodeBitmapSampleActivity"></activity>
+        <activity android:name=".activity.XfermodeBitmapSampleActivity" />
+
+
+
     </application>
 
 </manifest>

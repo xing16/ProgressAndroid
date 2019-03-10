@@ -1,11 +1,11 @@
 package com.xing.progressandroid.activity;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
 import com.xing.progressandroid.R;
+import com.xing.progressandroid.base.BaseActivity;
 
-public class BezierActivity extends AppCompatActivity {
+public class BezierActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
