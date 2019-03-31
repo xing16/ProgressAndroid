@@ -28,6 +28,12 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_shader:
                 IntentUtil.startActivity(this, ShaderActivity.class);
                 break;
+            case R.id.btn_app_upgrade:
+                IntentUtil.startActivity(this, AppUpgradeActivity.class);
+                break;
+            case R.id.btn_flow:
+                IntentUtil.startActivity(this, FlowLayoutActivity.class);
+                break;
         }
     }
 }
