@@ -26,4 +26,10 @@
         <attr name="imgSrc" format="reference" />
     </declare-styleable>
 
+    <declare-styleable name="FlowLayout2">
+        <attr name="horizontalMargin" format="dimension|reference" />
+        <attr name="verticalMargin" format="dimension|reference" />
+    </declare-styleable>
+
+
 </resources>

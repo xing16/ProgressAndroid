@@ -1,9 +1,13 @@
 package com.xing.progressandroid.customview.flowlayout;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
+
+import com.xing.progressandroid.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,16 +18,35 @@ import java.util.List;
  */
 public class FlowLayout2 extends ViewGroup {
 
-    private int horizontalMargin = 20;
-    private int verticalMargin = 20;
+    /**
+     * 默认值
+     */
+    private final int DEFAULT_HORIZONTAL_MARGIN = dp2Px(10);
+    private final int DEFAULT_VERTICAL_MARGIN = dp2Px(10);
+
+    private int horizontalMargin = DEFAULT_HORIZONTAL_MARGIN;
+    private int verticalMargin = DEFAULT_VERTICAL_MARGIN;
+
+    /**
+     * 存储子控件的位置信息
+     */
     private List<FlowChildPosition> childPositions = new ArrayList<>();
 
+
     public FlowLayout2(Context context) {
-        super(context);
+        this(context, null);
     }
 
     public FlowLayout2(Context context, AttributeSet attrs) {
         super(context, attrs);
+        readAttrs(context, attrs);
+    }
+
+    private void readAttrs(Context context, AttributeSet attrs) {
+        TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.FlowLayout2);
+        horizontalMargin = typedArray.getDimensionPixelSize(R.styleable.FlowLayout2_horizontalMargin, DEFAULT_HORIZONTAL_MARGIN);
+        verticalMargin = typedArray.getDimensionPixelSize(R.styleable.FlowLayout2_verticalMargin, DEFAULT_VERTICAL_MARGIN);
+        typedArray.recycle();
     }
 
     @Override
@@ -69,7 +92,7 @@ public class FlowLayout2 extends ViewGroup {
                 childPositions.add(new FlowChildPosition(paddingLeft,
                         paddingTop + height,
                         paddingLeft + childViewWidth,
-                        paddingTop + height  + childViewHeight));
+                        paddingTop + height + childViewHeight));
                 lineWidth = childViewWidth + horizontalMargin;
                 width = Math.max(width, lineWidth);
                 lineHeight = childViewHeight;
@@ -125,6 +148,11 @@ public class FlowLayout2 extends ViewGroup {
     @Override
     protected LayoutParams generateLayoutParams(LayoutParams p) {
         return new MarginLayoutParams(p);
+    }
+
+
+    private int dp2Px(int dp) {
+        return (int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dp, getResources().getDisplayMetrics());
     }
 
 
