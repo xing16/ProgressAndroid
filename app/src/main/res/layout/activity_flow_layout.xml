@@ -9,7 +9,7 @@
     android:orientation="vertical"
     tools:context=".activity.FlowLayoutActivity">
 
-    <com.xing.progressandroid.customview.flowlayout.FlowLayout
+    <com.xing.progressandroid.customview.flowlayout.FlowLayout2
         android:id="@+id/fl_flow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
