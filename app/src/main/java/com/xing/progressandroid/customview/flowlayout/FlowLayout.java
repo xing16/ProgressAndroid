@@ -51,19 +51,19 @@ public class FlowLayout extends ViewGroup {
             int childViewWidth = childView.getMeasuredWidth() + lp.leftMargin + lp.rightMargin;
             int childViewHeight = childView.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
             int availableWidth = widthSize - paddingLeft - paddingRight - lineWidth;
-            if (availableWidth > childViewWidth) {   // 不换行
+            if (availableWidth >= childViewWidth) {   // 不换行
                 lineWidth += (childViewWidth + horizontalMargin);
-//                width = Math.max(width, lineWidth);
+                width = Math.max(width, lineWidth);
                 lineHeight = Math.max(lineHeight, childViewHeight);
             } else {   // 换行
-                width = Math.max(width, lineWidth);
                 lineWidth = childViewWidth + horizontalMargin;
+                width = Math.max(width, lineWidth);
                 height += lineHeight + verticalMargin;
                 lineHeight = childViewHeight;
             }
         }
-        int finalWidth = widthMode == MeasureSpec.EXACTLY ? widthSize : paddingLeft + paddingRight + width - horizontalMargin;
-        int finalHeight = heightMode == MeasureSpec.EXACTLY ? heightSize : lineHeight + height + paddingTop + paddingBottom ;
+        int finalWidth = (widthMode == MeasureSpec.EXACTLY) ? widthSize : paddingLeft + paddingRight + width  - horizontalMargin;
+        int finalHeight = (heightMode == MeasureSpec.EXACTLY) ? heightSize : lineHeight + height + paddingTop + paddingBottom;
         setMeasuredDimension(finalWidth, finalHeight);
     }
 
@@ -88,7 +88,7 @@ public class FlowLayout extends ViewGroup {
             int childViewWidth = childView.getMeasuredWidth() + lp.leftMargin + lp.rightMargin;
             int childViewHeight = childView.getMeasuredHeight() + lp.topMargin + lp.bottomMargin;
             int availableWidth = getWidth() - paddingLeft - paddingRight - lineWidth;
-            if (availableWidth > childViewWidth) {   // 不换行
+            if (availableWidth >= childViewWidth) {   // 不换行
                 childView.layout(lineWidth, height, lineWidth + childViewWidth, height + childViewHeight);
                 lineWidth += horizontalMargin + childViewWidth;
                 lineHeight = Math.max(lineHeight, childViewHeight);
