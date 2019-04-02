@@ -42,7 +42,8 @@
                 android:resource="@xml/file_path" />
         </provider>
 
-        <activity android:name=".activity.FlowLayoutActivity"></activity>
+        <activity android:name=".activity.FlowLayoutActivity" />
+        <activity android:name=".activity.RecyclerViewActivity"></activity>
     </application>
 
 </manifest>

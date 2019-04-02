@@ -34,6 +34,9 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_flow:
                 IntentUtil.startActivity(this, FlowLayoutActivity.class);
                 break;
+            case R.id.btn_recycler:
+                IntentUtil.startActivity(this, RecyclerViewActivity.class);
+                break;
         }
     }
 }

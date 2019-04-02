@@ -37,10 +37,10 @@ public class LinearGradientView extends View {
     private void init() {
         paint = new Paint(Paint.ANTI_ALIAS_FLAG);
         linePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
-        linePaint.setStrokeWidth(DensityUtil.dp2Px(getContext(), 2));
+        linePaint.setStrokeWidth(DensityUtil.dp2px(getContext(), 2));
         linePaint.setStyle(Paint.Style.FILL);
         linePaint.setColor(Color.BLACK);
-        linePaint.setTextSize(DensityUtil.dp2Px(getContext(), 14));
+        linePaint.setTextSize(DensityUtil.dp2px(getContext(), 14));
         linePaint.setTextAlign(Paint.Align.CENTER);
     }
 

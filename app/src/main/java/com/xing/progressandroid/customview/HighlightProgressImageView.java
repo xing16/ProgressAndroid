@@ -61,11 +61,11 @@ public class HighlightProgressImageView extends AppCompatImageView {
         circlePaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         circlePaint.setColor(getResources().getColor(android.R.color.white));
         circlePaint.setStyle(Paint.Style.STROKE);
-        circlePaint.setStrokeWidth(DensityUtil.dp2Px(getContext(), 8));
+        circlePaint.setStrokeWidth(DensityUtil.dp2px(getContext(), 8));
 
 //        setLayerType(View., null);
-        radius = DensityUtil.dp2Px(getContext(), 40);
-        roundCorner = DensityUtil.dp2Px(getContext(), 10);
+        radius = DensityUtil.dp2px(getContext(), 40);
+        roundCorner = DensityUtil.dp2px(getContext(), 10);
 
         clipPath = new Path();
         porterDuffXfermode = new PorterDuffXfermode(PorterDuff.Mode.SRC_OUT);
