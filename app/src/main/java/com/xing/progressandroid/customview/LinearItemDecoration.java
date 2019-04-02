@@ -32,7 +32,7 @@ public class LinearItemDecoration extends RecyclerView.ItemDecoration {
     /**
      * 跳过指定集合中的 position ，不设置分割线
      */
-    private List<Integer> jumpPositionList;
+    private List<Integer> jumpPositionList = new ArrayList<>();
 
     public LinearItemDecoration(Context context) {
         this.context = context;
