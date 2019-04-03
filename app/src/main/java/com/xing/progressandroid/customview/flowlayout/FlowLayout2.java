@@ -124,12 +124,13 @@ public class FlowLayout2 extends ViewGroup {
      *
      * @param adapter
      */
-    public void setAdapter(FlowAdapter adapter) {
+    public <T> void setAdapter(FlowAdapter<T> adapter) {
         if (adapter == null) {
             throw new IllegalArgumentException("adapter can't not null");
         }
         for (int i = 0; i < adapter.getCount(); i++) {
-            View view = adapter.getView(i, this);
+            T t = adapter.getItem(i);
+            View view = adapter.getView(i, t, this);
             addView(view);
         }
     }

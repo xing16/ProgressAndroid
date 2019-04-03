@@ -27,31 +27,22 @@ public class FlowLayoutActivity extends BaseActivity {
         heights = new int[]{dp2Px(20), dp2Px(30), dp2Px(40), dp2Px(25), dp2Px(60), dp2Px(50)};
         FlowLayout2 flowLayout = findViewById(R.id.fl_flow);
         FlowLayout2 flowLayout2 = findViewById(R.id.fl_flow2);
-        flowLayout.setAdapter(new FlowAdapter() {
+        flowLayout.setAdapter(new FlowAdapter<String>(data) {
             @Override
-            public int getCount() {
-                return data.length;
-            }
-
-            @Override
-            public View getView(int position, ViewGroup parent) {
+            public View getView(int position, String str, ViewGroup parent) {
                 TextView textView = new TextView(FlowLayoutActivity.this);
-                textView.setText(data[position]);
+                textView.setText(str);
                 textView.setBackgroundResource(R.drawable.shape_flow_item_bg);
                 return textView;
             }
         });
 
-        flowLayout2.setAdapter(new FlowAdapter() {
-            @Override
-            public int getCount() {
-                return data.length;
-            }
+        flowLayout2.setAdapter(new FlowAdapter<String>(data) {
 
             @Override
-            public View getView(int position, ViewGroup parent) {
+            public View getView(int position, String s, ViewGroup parent) {
                 TextView textView = new TextView(FlowLayoutActivity.this);
-                textView.setText(data[position]);
+                textView.setText(s);
                 textView.setBackgroundResource(R.drawable.shape_flow2_item_bg);
                 textView.setTextColor(Color.parseColor("#ff555555"));
                 ViewGroup.MarginLayoutParams lp = new ViewGroup.MarginLayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, heights[new Random().nextInt(heights.length)]);

@@ -62,7 +62,7 @@ public class FlowLayout extends ViewGroup {
                 lineHeight = childViewHeight;
             }
         }
-        int finalWidth = (widthMode == MeasureSpec.EXACTLY) ? widthSize : paddingLeft + paddingRight + width  - horizontalMargin;
+        int finalWidth = (widthMode == MeasureSpec.EXACTLY) ? widthSize : paddingLeft + paddingRight + width - horizontalMargin;
         int finalHeight = (heightMode == MeasureSpec.EXACTLY) ? heightSize : lineHeight + height + paddingTop + paddingBottom;
         setMeasuredDimension(finalWidth, finalHeight);
     }
@@ -107,12 +107,13 @@ public class FlowLayout extends ViewGroup {
      *
      * @param adapter
      */
-    public void setAdapter(FlowAdapter adapter) {
+    public <T> void setAdapter(FlowAdapter<T> adapter) {
         if (adapter == null) {
             throw new IllegalArgumentException("adapter can't not null");
         }
         for (int i = 0; i < adapter.getCount(); i++) {
-            View view = adapter.getView(i, this);
+            T t = adapter.getItem(i);
+            View view = adapter.getView(i, t, this);
             addView(view);
         }
     }
