@@ -37,6 +37,12 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_recycler:
                 IntentUtil.startActivity(this, RecyclerViewActivity.class);
                 break;
+            case R.id.btn_grid_recycler:
+                IntentUtil.startActivity(this, GridCategoryActivity.class);
+                break;
+            case R.id.btn_grid_viewpager:
+                IntentUtil.startActivity(this, GridViewPagerActivity.class);
+                break;
         }
     }
 }

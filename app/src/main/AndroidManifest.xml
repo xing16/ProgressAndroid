@@ -43,7 +43,9 @@
         </provider>
 
         <activity android:name=".activity.FlowLayoutActivity" />
-        <activity android:name=".activity.RecyclerViewActivity"></activity>
+        <activity android:name=".activity.RecyclerViewActivity" />
+        <activity android:name=".activity.GridCategoryActivity" />
+        <activity android:name=".activity.GridViewPagerActivity"></activity>
     </application>
 
 </manifest>
