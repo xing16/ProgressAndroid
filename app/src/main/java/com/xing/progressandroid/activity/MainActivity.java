@@ -4,7 +4,10 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.xing.progressandroid.R;
+import com.xing.progressandroid.activity.animation.AnimationMainActivity;
 import com.xing.progressandroid.base.BaseActivity;
+import com.xing.progressandroid.livedata.LiveDataActivity;
+import com.xing.progressandroid.rxjava.RxjavaActivity;
 import com.xing.progressandroid.utils.IntentUtil;
 
 public class MainActivity extends BaseActivity {
@@ -43,6 +46,16 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_grid_viewpager:
                 IntentUtil.startActivity(this, GridViewPagerActivity.class);
                 break;
+            case R.id.btn_animation:
+                IntentUtil.startActivity(this, AnimationMainActivity.class);
+                break;
+            case R.id.btn_live_data:
+                IntentUtil.startActivity(this, LiveDataActivity.class);
+                break;
+            case R.id.btn_rxjava:
+                IntentUtil.startActivity(this, RxjavaActivity.class);
+                break;
         }
+
     }
 }

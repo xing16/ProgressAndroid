@@ -45,7 +45,12 @@
         <activity android:name=".activity.FlowLayoutActivity" />
         <activity android:name=".activity.RecyclerViewActivity" />
         <activity android:name=".activity.GridCategoryActivity" />
-        <activity android:name=".activity.GridViewPagerActivity"></activity>
+        <activity android:name=".activity.GridViewPagerActivity" />
+        <activity android:name=".activity.animation.AnimationMainActivity" />
+        <activity android:name=".activity.animation.AnimationDestActivity" />
+        <activity android:name=".livedata.LiveDataActivity" />
+        <activity android:name=".livedata.LiveDataSecondActivity" />
+        <activity android:name=".rxjava.RxjavaActivity"></activity>
     </application>
 
 </manifest>

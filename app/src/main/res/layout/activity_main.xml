@@ -102,6 +102,39 @@
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 
+        <Button
+            android:id="@+id/btn_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Animation Test"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_live_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Live Data"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_rxjava"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="RxJava2"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
 
     </LinearLayout>
 
