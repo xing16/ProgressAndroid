@@ -5,7 +5,6 @@ import android.view.View;
 
 import com.xing.progressandroid.R;
 import com.xing.progressandroid.activity.animation.AnimationMainActivity;
-import com.xing.progressandroid.base.BaseActivity;
 import com.xing.progressandroid.livedata.LiveDataActivity;
 import com.xing.progressandroid.rxjava.RxjavaActivity;
 import com.xing.progressandroid.utils.IntentUtil;
@@ -54,6 +53,9 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_rxjava:
                 IntentUtil.startActivity(this, RxjavaActivity.class);
+                break;
+            case R.id.btn_gradient_status_bar:
+                IntentUtil.startActivity(this, GradientStatusBarActivity.class);
                 break;
         }
 

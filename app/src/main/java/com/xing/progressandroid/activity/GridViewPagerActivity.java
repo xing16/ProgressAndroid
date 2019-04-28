@@ -19,7 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class GridViewPagerActivity extends AppCompatActivity {
+public class GridViewPagerActivity extends BaseActivity {
 
     private Random random;
     private int[] colors = {0xffec407a, 0xffab47bc, 0xff29b6f6, 0xff7e57c2

@@ -50,7 +50,12 @@
         <activity android:name=".activity.animation.AnimationDestActivity" />
         <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".livedata.LiveDataSecondActivity" />
-        <activity android:name=".rxjava.RxjavaActivity"></activity>
+        <activity android:name=".rxjava.RxjavaActivity" />
+        <activity
+            android:name=".activity.GradientStatusBarActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
+        </activity>
     </application>
 
 </manifest>

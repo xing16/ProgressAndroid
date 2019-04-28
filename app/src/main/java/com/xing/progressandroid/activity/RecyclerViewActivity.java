@@ -14,7 +14,7 @@ import com.xing.progressandroid.customview.LinearItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerViewActivity extends AppCompatActivity {
+public class RecyclerViewActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

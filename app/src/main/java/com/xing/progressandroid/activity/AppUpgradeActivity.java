@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.xing.progressandroid.R;
-import com.xing.progressandroid.base.BaseActivity;
 import com.xing.progressandroid.upgrade.AppUpgradeManager;
 import com.xing.progressandroid.upgrade.TestHttpManager;
 

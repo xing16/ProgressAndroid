@@ -8,7 +8,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.xing.progressandroid.R;
-import com.xing.progressandroid.base.BaseActivity;
 import com.xing.progressandroid.customview.flowlayout.FlowAdapter;
 import com.xing.progressandroid.customview.flowlayout.FlowLayout2;
 

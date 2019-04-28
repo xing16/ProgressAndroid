@@ -1,24 +1,20 @@
 package com.xing.progressandroid.activity.animation;
 
-import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
 import android.animation.ValueAnimator;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.AccelerateInterpolator;
-import android.view.animation.LinearInterpolator;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.xing.progressandroid.R;
+import com.xing.progressandroid.activity.BaseActivity;
 import com.xing.progressandroid.customview.ViewWrapper;
 import com.xing.progressandroid.utils.DensityUtil;
 
-public class AnimationMainActivity extends AppCompatActivity {
+public class AnimationMainActivity extends BaseActivity {
 
     private Button btn;
     private ViewGroup.MarginLayoutParams layoutParams;

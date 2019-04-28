@@ -19,7 +19,7 @@ import com.xing.progressandroid.listener.OnRecyclerPageChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GridCategoryActivity extends AppCompatActivity {
+public class GridCategoryActivity extends BaseActivity {
 
     private static final String TAG = "GridCategoryActivity";
     private IndicatorView indicatorView;

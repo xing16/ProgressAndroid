@@ -23,10 +23,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xing.progressandroid.R;
+import com.xing.progressandroid.activity.BaseActivity;
 import com.xing.progressandroid.customview.ViewWrapper;
 import com.xing.progressandroid.utils.DensityUtil;
 
-public class AnimationDestActivity extends AppCompatActivity {
+public class AnimationDestActivity extends BaseActivity {
 
     private ViewGroup.MarginLayoutParams lp;
     private ViewGroup.MarginLayoutParams searchLayoutParams;
