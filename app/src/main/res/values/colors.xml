@@ -7,5 +7,9 @@
     <color name="translucentGray">#cc222222</color>
     <color name="red">#cc1111</color>
     <color name="red1">#cf4444</color>
-    <color name="orange">#ec9112</color>
+    <color name="orange">#ff8800</color>
+    <color name="red_dark">#ff00b2</color>
+    <color name="green_dark">#07bcbf</color>
+    <color name="green_light">#4ea70a</color>
+    <color name="colorKeyPress">#ddd</color>
 </resources>

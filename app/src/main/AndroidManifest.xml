@@ -53,9 +53,12 @@
         <activity android:name=".rxjava.RxjavaActivity" />
         <activity
             android:name=".activity.GradientStatusBarActivity"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
-
-        </activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".activity.EventTestActivity" />
+        <activity android:name=".activity.PwdKeyboardActivity" />
+        <activity android:name=".activity.ViewPagerActivity" />
+        <activity android:name=".activity.animation.ScrollListViewActivity" />
+        <activity android:name=".activity.LayoutManagerActivity"></activity>
     </application>
 
 </manifest>

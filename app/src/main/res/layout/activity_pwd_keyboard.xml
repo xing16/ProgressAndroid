@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.PwdKeyboardActivity">
+
+
+    <com.xing.progressandroid.customview.PwdKeyboardView
+        android:id="@+id/key_board"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_input"
+        android:layout_marginTop="40dp"
+        android:background="#919191"
+        android:keepScreenOn="true"
+        android:keyBackground="@drawable/selector_key_board"
+        android:keyTextColor="@android:color/black"
+        android:keyTextSize="26sp"
+        android:shadowRadius="0" />
+
+
+    <com.xing.progressandroid.customview.CircleProgressView
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/colorPrimary" />
+
+
+</LinearLayout>

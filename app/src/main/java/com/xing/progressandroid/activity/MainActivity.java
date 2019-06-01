@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.xing.progressandroid.R;
 import com.xing.progressandroid.activity.animation.AnimationMainActivity;
+import com.xing.progressandroid.activity.animation.ScrollListViewActivity;
 import com.xing.progressandroid.livedata.LiveDataActivity;
 import com.xing.progressandroid.rxjava.RxjavaActivity;
 import com.xing.progressandroid.utils.IntentUtil;
@@ -56,6 +57,21 @@ public class MainActivity extends BaseActivity {
                 break;
             case R.id.btn_gradient_status_bar:
                 IntentUtil.startActivity(this, GradientStatusBarActivity.class);
+                break;
+            case R.id.btn_touch_test:
+                IntentUtil.startActivity(this, EventTestActivity.class);
+                break;
+            case R.id.btn_pwd_keyboard:
+                IntentUtil.startActivity(this, PwdKeyboardActivity.class);
+                break;
+            case R.id.btn_viewpager:
+                IntentUtil.startActivity(this, ViewPagerActivity.class);
+                break;
+            case R.id.btn_scroll_list:
+                IntentUtil.startActivity(this, ScrollListViewActivity.class);
+                break;
+            case R.id.btn_layout_manager:
+                IntentUtil.startActivity(this, LayoutManagerActivity.class);
                 break;
         }
 
