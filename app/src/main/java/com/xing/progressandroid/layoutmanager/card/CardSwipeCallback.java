@@ -6,7 +6,6 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.Log;
 import android.view.View;
-import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.xing.progressandroid.R;
@@ -33,7 +32,7 @@ public class CardSwipeCallback<T> extends ItemTouchHelper.Callback {
         int swipeFlags = 0;
         RecyclerView.LayoutManager layoutManager = recyclerView.getLayoutManager();
         if (layoutManager instanceof CardLayoutManager) {
-            swipeFlags = ItemTouchHelper.UP | ItemTouchHelper.DOWN | ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
+            swipeFlags = ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT;
         }
         return makeMovementFlags(dragFlags, swipeFlags);
     }
@@ -54,7 +53,6 @@ public class CardSwipeCallback<T> extends ItemTouchHelper.Callback {
      */
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
-        Log.e(TAG, "onSwiped:  " + i);
         dataList.remove(0);
         adapter.notifyDataSetChanged();
         if (onCardSwipeListener != null) {
@@ -67,7 +65,6 @@ public class CardSwipeCallback<T> extends ItemTouchHelper.Callback {
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
         // 滑动距离
         float distance = Math.max(Math.abs(dX), Math.abs(dY));
-        Log.e(TAG, "distance:  " + distance);
         float threshold = getThreshold(recyclerView, viewHolder);
         // 滑动比例
         float ratio = distance / threshold;
@@ -75,32 +72,35 @@ public class CardSwipeCallback<T> extends ItemTouchHelper.Callback {
             ratio = 1.0f;
         }
         Log.e(TAG, "onChildDraw: ratio " + ratio);
-        int itemCount = recyclerView.getLayoutManager().getItemCount();
-        int childCount = recyclerView.getChildCount();
-        Log.e(TAG, "onChildDraw: " + itemCount);
+        int itemCount = recyclerView.getLayoutManager().getChildCount();
+        Log.e("111111", "onChildDraw: " + itemCount);
+
         /**
          * 因为 CardLayoutManager 中 onLayoutChildren() 是从 itemCount - 1 到 0 依次 addView 到 recyclerview 中的，
          * 所以在获取子 view (即 getChildAt(i)) 时，第 0 个子 View 对应的数据是 dataList 中最后一个，同时他的位移和缩放都是最大的。
          */
-        for (int i = itemCount - 2; i > itemCount - 1 - settings.getMaxVisibleCount(); i--) {
-            // i = itemCount - 1  =>  第 0 层 , translationY = 0,  test data = 0 ，移动时不进行缩放处理
-            // i = itemCount - 2  =>  第 1 层(test data = 1) , 1 * translationY 变为 0 ,
-            // i = itemCount - 3  =>  第 2 层(test data = 2) , 2 * translationY 变为 1 * translationY,
-            // i = itemCount - 4  =>  第 3 层(test data = 3) , 3 * translationY 变为 2 * translationY,
-            // i = itemCount - 5  =>  第 4 层(test data = 4) , 4 * translationY 变为 3 * translationY,
-            // i = itemCount - 6  =>  第 5 层(test data = 5) , 5 * translationY 变为 4 * translationY,
-            View view = recyclerView.getLayoutManager().getChildAt(i);
-            TextView textView = view.findViewById(R.id.tv_title);
-            String text = textView.getText().toString();
-            float translationY = view.getTranslationY();
-            Log.e("debugdevbug", "i = " + i + " ,  YYY = " + translationY + "text = " + text);
-
-            if (i >= itemCount - settings.getMaxVisibleCount() - 1) {
-                float v = settings.getTranslationY() * (itemCount - 1 - i) - settings.getTranslationY() * ratio;
-                Log.e("ddaaac", ": i = " + i + " transY = " + v);
-                view.setTranslationY(v);
-                view.setScaleX(1.0f - (itemCount - 1 - i) * settings.getScale() + settings.getScale() * ratio);
-                view.setScaleY(1.0f - (itemCount - 1 - i) * settings.getScale() + settings.getScale() * ratio);
+        for (int i = 0; i < itemCount; i++) {
+            // i = 0  =>  第 0 层 , translationY = 0,  test data = 0 ，移动时不进行缩放处理
+            // i = 1  =>  第 1 层(test data = 1) , 1 * translationY 变为 0 , 1 - 1* scale -> 1
+            // i = 2  =>  第 2 层(test data = 2) , 2 * translationY 变为 1 * translationY,   1 - 2*scale - > 1 - scale
+            // i = 3  =>  第 3 层(test data = 3) , 3 * translationY 变为 2 * translationY,
+            // i = 4  =>  第 4 层(test data = 4) , 4 * translationY 变为 3 * translationY,
+            // i = 5  =>  第 5 层(test data = 5) , 5 * translationY 变为 4 * translationY,
+            View view = recyclerView.getLayoutManager().findViewByPosition(i);
+            Log.e("debudebug", "i = " + i + ", view == " + (view == null));
+            if (i == 0) {
+                // 旋转动画
+                view.setRotation((dX < 0 ? -1 : 1) * 15 * ratio);
+            } else {
+                // 缩放，位移动画
+                TextView textView = view.findViewById(R.id.tv_title);
+                String text = textView.getText().toString();
+                if (i < settings.getMaxVisibleCount()) {
+                    float v = settings.getTranslationY() * i - settings.getTranslationY() * ratio;
+                    view.setTranslationY(v);
+                    view.setScaleX(1.0f - i * settings.getScale() + settings.getScale() * ratio);
+                    view.setScaleY(1.0f - i * settings.getScale() + settings.getScale() * ratio);
+                }
             }
         }
     }
@@ -115,7 +115,19 @@ public class CardSwipeCallback<T> extends ItemTouchHelper.Callback {
     private float getThreshold(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
         Log.e(TAG, "getSwipeThreshold() =  " + getSwipeThreshold(viewHolder));
         Log.e(TAG, "getWidth() =  " + recyclerView.getWidth());
-        return recyclerView.getWidth() * getSwipeThreshold(viewHolder);
+//        return recyclerView.getWidth() * getSwipeThreshold(viewHolder);
+        return recyclerView.getWidth() * 0.5f;
+    }
+
+    @Override
+    public void clearView(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder) {
+        super.clearView(recyclerView, viewHolder);
+        viewHolder.itemView.setRotation(0f);
+    }
+
+    @Override
+    public float getSwipeThreshold(@NonNull RecyclerView.ViewHolder viewHolder) {
+        return 0.2f;
     }
 
     interface OnCardSwipeListener {

@@ -5,21 +5,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
     tools:context=".activity.LayoutManagerActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_layout_manager"
+    <Button
+        android:id="@+id/btn_custom_linear_manager"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:background="@android:color/darker_gray" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:onClick="click"
+        android:text="Custom LayoutManager"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rv_flow"
+    <Button
+        android:id="@+id/btn_card_layout_manager"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/darker_gray" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:onClick="click"
+        android:text="CardLayoutManager"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_flow_layout_manager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:background="@color/colorPrimary"
+        android:onClick="click"
+        android:text="FlowLayoutManager"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white" />
 
 
 </LinearLayout>

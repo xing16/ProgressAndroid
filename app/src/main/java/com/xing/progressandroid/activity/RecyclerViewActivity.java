@@ -25,7 +25,7 @@ public class RecyclerViewActivity extends BaseActivity {
         List<MultiItem> list = new ArrayList<>();
         list.add(new MultiItem("Android", MultiItem.TEXT));
         list.add(new MultiItem("Vue.js", R.drawable.meizi, MultiItem.TEXT_IMG));
-        list.add(new MultiItem("iOS", R.drawable.logo, MultiItem.IMG_TEXT));
+        list.add(new MultiItem("iOS", R.drawable.meizi, MultiItem.IMG_TEXT));
         list.add(new MultiItem("Flutter", R.drawable.meizi, MultiItem.IMG_TEXT));
         list.add(new MultiItem("linux", MultiItem.TEXT));
         list.add(new MultiItem("MacBookPro", MultiItem.TEXT));
@@ -37,7 +37,7 @@ public class RecyclerViewActivity extends BaseActivity {
                 .height(5)
                 .color(Color.parseColor("#0000ff"))
                 .margin(20, 20)
-                .jumpPositions(new int[]{-1, 1, 3, 20});
+                .jumpPositions(new int[]{ 1, 3, 20});
         recyclerView.addItemDecoration(decoration);
         MultiTypeAdapter adapter = new MultiTypeAdapter(list);
         recyclerView.setAdapter(adapter);

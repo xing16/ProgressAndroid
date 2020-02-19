@@ -30,7 +30,7 @@ public class MultiTypeAdapter extends BaseMultiItemQuickAdapter<MultiItem, BaseV
     protected void convert(BaseViewHolder helper, MultiItem item) {
         switch (helper.getItemViewType()) {
             case MultiItem.TEXT:
-                helper.setText(R.id.tv_text_title, item.getText());
+                helper.setText(R.id.tv_title, item.getText());
                 break;
             case MultiItem.IMG_TEXT:
                 helper.setText(R.id.tv_title, item.getText()).setImageResource(R.id.iv_img_left, item.getResId());

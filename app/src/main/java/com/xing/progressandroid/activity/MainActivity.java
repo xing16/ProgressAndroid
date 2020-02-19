@@ -73,6 +73,24 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_layout_manager:
                 IntentUtil.startActivity(this, LayoutManagerActivity.class);
                 break;
+            case R.id.btn_snap_helper:
+                IntentUtil.startActivity(this, SnapHelperActivity.class);
+                break;
+            case R.id.btn_nested_scroll:
+                IntentUtil.startActivity(this, NestedScrollActivity.class);
+                break;
+            case R.id.btn_tree:
+                IntentUtil.startActivity(this, TreeRecyclerViewActivity.class);
+                break;
+            case R.id.btn_ripple_animation:
+                IntentUtil.startActivity(this, RippleAnimationActivity.class);
+                break;
+            case R.id.btn_db:
+                IntentUtil.startActivity(this, DbActivity.class);
+                break;
+            case R.id.btn_calendar:
+                IntentUtil.startActivity(this, CalendarActivity.class);
+                break;
         }
 
     }

@@ -1,7 +1,9 @@
 package com.xing.progressandroid.layoutmanager;
 
+import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.SparseArray;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -11,6 +13,10 @@ import android.view.ViewGroup;
 public class CustomLinearLayoutManager extends RecyclerView.LayoutManager {
 
     private static final String TAG = "CustomLayoutManager";
+    /**
+     * 记录所有 item 位置
+     */
+    private SparseArray<Rect> itemsRect = new SparseArray<>();
 
     /**
      * 设置 RecyclerView 中的 item 的 LayoutParams
@@ -37,18 +43,31 @@ public class CustomLinearLayoutManager extends RecyclerView.LayoutManager {
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         super.onLayoutChildren(recycler, state);
-        int offsetY = 0;
+
         int itemCount = getItemCount();
-        Log.e(TAG, "onLayoutChildren: itemCount = " + itemCount);
-        for (int i = 0; i < getItemCount(); i++) {
+        if (itemCount == 0) {
+            detachAndScrapAttachedViews(recycler);
+            return;
+        }
+        detachAndScrapAttachedViews(recycler);
+        View firstView = recycler.getViewForPosition(0);
+        measureChildWithMargins(firstView, 0, 0);
+        int width = getDecoratedMeasuredWidth(firstView);
+        int height = getDecoratedMeasuredHeight(firstView);
+        int visibleCount = getHeightExcludePadding() / height;
+        int offsetY = 0;
+        for (int i = 0; i < itemCount; i++) {
+            Rect rect = new Rect(0, offsetY, width, offsetY + height);
+            itemsRect.put(i, rect);
+            offsetY += height;
+        }
+        for (int i = 0; i < visibleCount; i++) {
             View view = recycler.getViewForPosition(i);
             addView(view);
             // 测量子 item 宽高，包括 ItemDecoration + margin
             measureChildWithMargins(view, 0, 0);
-            int width = getDecoratedMeasuredWidth(view);
-            int height = getDecoratedMeasuredHeight(view);
-            layoutDecorated(view, 0, offsetY, width, offsetY + height);
-            offsetY += height;
+            Rect rect = itemsRect.get(i);
+            layoutDecorated(view, rect.left, rect.top, rect.right, rect.bottom);
         }
         // 如果所有 item 高度之和没有填充 recyclerview 高度，则取 recyclerview 设置的高度
         totalHeight = Math.max(offsetY, getHeightExcludePadding());

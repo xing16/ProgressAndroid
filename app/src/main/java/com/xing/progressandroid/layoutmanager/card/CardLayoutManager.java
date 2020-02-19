@@ -1,6 +1,7 @@
 package com.xing.progressandroid.layoutmanager.card;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
 
 public class CardLayoutManager extends RecyclerView.LayoutManager {
@@ -38,13 +39,14 @@ public class CardLayoutManager extends RecyclerView.LayoutManager {
             layoutDecorated(view, left, top, left + decoratedWidth, top + decoratedHeight);
             if (i < settings.getMaxVisibleCount()) {
                 view.setTranslationY(i * settings.getTranslationY());
-                view.setScaleX(1 - i * settings.getScale());
-                view.setScaleY(1 - i * settings.getScale());
+                view.setScaleX(1.0f - i * settings.getScale());
+                view.setScaleY(1.0f - i * settings.getScale());
             } else {
-                view.setScaleX(1 - settings.getMaxVisibleCount() * settings.getScale());
-                view.setScaleY(1 - settings.getMaxVisibleCount() * settings.getScale());
+                view.setScaleX(1.0f - (settings.getMaxVisibleCount() - 1) * settings.getScale());
+                view.setScaleY(1.0f - (settings.getMaxVisibleCount() - 1) * settings.getScale());
                 view.setTranslationY((settings.getMaxVisibleCount() - 1) * settings.getTranslationY());
             }
+            Log.e(TAG, "index =  " + i + " ,transY = " + view.getTranslationY() + ",scale = " + view.getScaleX());
         }
     }
 }

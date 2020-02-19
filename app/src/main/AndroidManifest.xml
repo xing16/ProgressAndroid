@@ -15,13 +15,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.CalendarActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity android:name=".activity.MainActivity">
+
         </activity>
         <activity android:name=".activity.XfermodeActivity" />
         <activity android:name=".activity.ShaderActivity" />
@@ -58,7 +61,15 @@
         <activity android:name=".activity.PwdKeyboardActivity" />
         <activity android:name=".activity.ViewPagerActivity" />
         <activity android:name=".activity.animation.ScrollListViewActivity" />
-        <activity android:name=".activity.LayoutManagerActivity"></activity>
+        <activity android:name=".activity.LayoutManagerActivity" />
+        <activity android:name=".activity.layoutmanager.CardLayoutManagerActivity" />
+        <activity android:name=".activity.layoutmanager.FlowLayoutManagerActivity" />
+        <activity android:name=".activity.layoutmanager.CustomLinearLayoutManagerActivity" />
+        <activity android:name=".activity.SnapHelperActivity" />
+        <activity android:name=".activity.NestedScrollActivity" />
+        <activity android:name=".activity.TreeRecyclerViewActivity" />
+        <activity android:name=".activity.RippleAnimationActivity" />
+        <activity android:name=".activity.DbActivity" />
     </application>
 
 </manifest>

@@ -3,6 +3,7 @@ package com.xing.progressandroid.adapter;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,18 +28,26 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
         inflater = LayoutInflater.from(context);
     }
 
-
     @NonNull
     @Override
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        Log.e("debugdebug", "onCreateViewHolder: ");
 //        View itemView = inflater.inflate(R.layout.item_card_layout_manager, viewGroup, false);
-        View itemView = inflater.inflate(R.layout.item_text, viewGroup, false);
+        View itemView = inflater.inflate(R.layout.item_card, viewGroup, false);
         return new RecyclerViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewHolder recyclerViewHolder, int i) {
-        ItemBean itemBean = list.get(i);
+    public void onBindViewHolder(@NonNull RecyclerViewHolder recyclerViewHolder, final int i) {
+        final ItemBean itemBean = list.get(i);
+        recyclerViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(itemBean, i);
+                }
+            }
+        });
         recyclerViewHolder.bindData(itemBean);
     }
 
@@ -64,4 +73,15 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.Recycl
             imageView.setImageDrawable(mContext.getResources().getDrawable(itemBean.getResId()));
         }
     }
+
+    OnItemClickListener listener;
+
+    public interface OnItemClickListener {
+        void onItemClick(ItemBean itemBean, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
+    }
+
 }

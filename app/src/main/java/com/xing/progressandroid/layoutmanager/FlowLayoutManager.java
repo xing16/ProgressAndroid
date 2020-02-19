@@ -2,6 +2,7 @@ package com.xing.progressandroid.layoutmanager;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ public class FlowLayoutManager extends RecyclerView.LayoutManager {
     private Context context;
     private int horizontalMargin;
     private int verticalMargin;
+    private int height;
 
     public FlowLayoutManager(Context context) {
         this.context = context;
@@ -75,6 +77,7 @@ public class FlowLayoutManager extends RecyclerView.LayoutManager {
     @Override
     public void onLayoutChildren(RecyclerView.Recycler recycler, RecyclerView.State state) {
         super.onLayoutChildren(recycler, state);
+        Log.e("deb", "onLayoutChildren: ");
         int itemCount = getItemCount();
         if (itemCount == 0 || state.isPreLayout()) {
             return;
@@ -85,8 +88,8 @@ public class FlowLayoutManager extends RecyclerView.LayoutManager {
         int paddingTop = getPaddingTop();
 
         int width = 0;
-        int height = 0;
-        int lineWidth = 0;
+        height = 0;
+        int lineWidth = paddingLeft;
         int lineHeight = 0;
         for (int i = 0; i < itemCount; i++) {
             View childView = recycler.getViewForPosition(i);
@@ -109,6 +112,27 @@ public class FlowLayoutManager extends RecyclerView.LayoutManager {
                 lineHeight = childHeight;
             }
         }
+    }
+
+    @Override
+    public boolean canScrollVertically() {
+        return true;
+    }
+
+    private int totalOffset = 0;
+
+    @Override
+    public int scrollVerticallyBy(int dy, RecyclerView.Recycler recycler, RecyclerView.State state) {
+        Log.e("deb", "scrollVerticallyBy: ");
+        int distance = dy;
+        if (totalOffset + distance <= 0) {
+            distance = -totalOffset;
+        } else if (totalOffset + dy > height - getHeight()) {   // 判断到底了
+            distance = height - getHeight() - totalOffset;
+        }
+        totalOffset += distance;
+        offsetChildrenVertical(-distance);
+        return dy;
     }
 
     private int dp2Px(int dp) {

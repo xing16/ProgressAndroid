@@ -197,7 +197,75 @@
             android:layout_marginTop="10dp"
             android:background="@color/colorPrimary"
             android:onClick="click"
-            android:text="Scroll listview"
+            android:text="LayoutManager"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_snap_helper"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Snap helper"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_nested_scroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Nested Scroll"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_tree"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Tree recyclerview"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/btn_ripple_animation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Ripple Animation"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+
+        <Button
+            android:id="@+id/btn_db"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="DB"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_calendar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@color/colorPrimary"
+            android:onClick="click"
+            android:text="Calendar"
             android:textAllCaps="false"
             android:textColor="@android:color/white" />
 

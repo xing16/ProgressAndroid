@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao' // apply plugin
 
 android {
     compileSdkVersion 28
@@ -16,6 +17,14 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+}
+
+
+greendao {
+    schemaVersion 3
+    daoPackage "com.xing.progressandroid.db.dao" // set package of generated classes
+    // 生成源文件的路径。默认源文件目录是在build目录中的 build/generated/source/greendaos
+    targetGenDir 'src/main/java'
 }
 
 dependencies {
@@ -38,6 +47,9 @@ dependencies {
     implementation "com.android.support:recyclerview-v7:28.0.0"
     implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30"
     implementation "android.arch.lifecycle:extensions:1.1.1"
+
+    implementation 'org.greenrobot:greendao:3.2.2' // add library
+    implementation 'io.github.yuweiguocn:GreenDaoUpgradeHelper:v2.2.1'
 
 
 }
